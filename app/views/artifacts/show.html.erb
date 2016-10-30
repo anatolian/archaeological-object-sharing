@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @artifact.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @artifact.description %>
+</p>
+
 <%= link_to 'Edit', edit_artifact_path(@artifact) %> |
 <%= link_to 'Back', artifacts_path %>

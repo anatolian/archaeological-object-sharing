@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +14,8 @@
   <tbody>
     <% @artifacts.each do |artifact| %>
       <tr>
+        <td><%= artifact.name %></td>
+        <td><%= artifact.description %></td>
         <td><%= link_to 'Show', artifact %></td>
         <td><%= link_to 'Edit', edit_artifact_path(artifact) %></td>
         <td><%= link_to 'Destroy', artifact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
