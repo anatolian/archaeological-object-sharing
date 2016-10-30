@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :models
-  devise_for :models
   resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
