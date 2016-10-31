@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  match '/test', :to => redirect('/addInfo.html')
+  match '/addInfo', :to => redirect('/addInfo.html')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
