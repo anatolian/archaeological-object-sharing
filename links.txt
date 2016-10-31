@@ -1,0 +1,9 @@
+
+557 group project - iteration1
+
+Alex Fiuk,  Brian Ting, Ethan Abramson, Ziyu Chen
+
+
+github link: https://github.com/cit-upenn/cis-557-projects-fall-2016-archaeological3dmodels
+
+pivotal tracker: https://www.pivotaltracker.com/n/projects/1901707
