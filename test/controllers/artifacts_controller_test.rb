@@ -18,7 +18,7 @@ class ArtifactsControllerTest < ActionController::TestCase
 
   test "should create artifact" do
     assert_difference('Artifact.count') do
-      post :create, artifact: {  }
+      post :create, artifact: { coordinate: @artifact.coordinate, description: @artifact.description, name: @artifact.name }
     end
 
     assert_redirected_to artifact_path(assigns(:artifact))
@@ -35,7 +35,7 @@ class ArtifactsControllerTest < ActionController::TestCase
   end
 
   test "should update artifact" do
-    patch :update, id: @artifact, artifact: {  }
+    patch :update, id: @artifact, artifact: { coordinate: @artifact.coordinate, description: @artifact.description, name: @artifact.name }
     assert_redirected_to artifact_path(assigns(:artifact))
   end
 
