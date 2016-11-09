@@ -1,0 +1,17 @@
+<%= form_for(@artifact) do |f| %>
+  <% if @artifact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
+
+      <ul>
+      <% @artifact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
