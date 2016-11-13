@@ -12,6 +12,19 @@ class UsersController < ApplicationController
   def show
   end
 
+  def numberArtifacts
+    @numberArtifacts = User.find(params[:id]).artifacts.size
+  end
+
+  def sort
+    @users = []
+    if (User.attribute_names.include? (params[:field])) then
+      @users = User.order(params[:field])
+    end
+    
+    render :index
+  end
+
   # GET /users/new
   def new
     @user = User.new

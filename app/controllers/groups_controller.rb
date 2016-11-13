@@ -12,6 +12,19 @@ class GroupsController < ApplicationController
   def show
   end
 
+  def numberArtifacts
+    @numberArtifacts = Group.find(params[:id]).artifacts.size
+  end
+
+  def sort
+    @groups = []
+    if (Group.attribute_names.include? (params[:field])) then
+      @groups = Group.order(params[:field])
+    end
+    
+    render :index
+  end
+
   # GET /groups/new
   def new
     @group = Group.new
