@@ -11,4 +11,12 @@
 #
 
 class User < ActiveRecord::Base
+	validates :firstname, presence: true
+	validates :lastname, presence: true
+	validates :username, presence: true
+	validates :username, uniqueness: true
+
+	has_and_belongs_to_many :groups
+	has_and_belongs_to_many :artifacts
+	has_many :locations, through: :artifacts
 end

@@ -12,6 +12,15 @@ class ArtifactsController < ApplicationController
   def show
   end
 
+  def sort
+    @artifacts = []
+    if (Artifact.attribute_names.include? (params[:field])) then
+      @artifacts = Artifact.order(params[:field])
+    end
+    
+    render :index
+  end
+
   # GET /artifacts/new
   def new
     @artifact = Artifact.new

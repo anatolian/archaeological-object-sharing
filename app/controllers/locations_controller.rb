@@ -12,6 +12,19 @@ class LocationsController < ApplicationController
   def show
   end
 
+  def numberArtifacts
+    @numberArtifacts = Location.find(params[:id]).artifacts.size
+  end
+
+  def sort
+    @locations = []
+    if (Location.attribute_names.include? (params[:field])) then
+      @locations = Location.order(params[:field])
+    end
+    
+    render :index
+  end
+
   # GET /locations/new
   def new
     @location = Location.new
