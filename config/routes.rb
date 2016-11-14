@@ -1,38 +1,46 @@
 # == Route Map
 #
-#        Prefix Verb   URI Pattern                   Controller#Action
-#     locations GET    /locations(.:format)          locations#index
-#               POST   /locations(.:format)          locations#create
-#  new_location GET    /locations/new(.:format)      locations#new
-# edit_location GET    /locations/:id/edit(.:format) locations#edit
-#      location GET    /locations/:id(.:format)      locations#show
-#               PATCH  /locations/:id(.:format)      locations#update
-#               PUT    /locations/:id(.:format)      locations#update
-#               DELETE /locations/:id(.:format)      locations#destroy
-#     artifacts GET    /artifacts(.:format)          artifacts#index
-#               POST   /artifacts(.:format)          artifacts#create
-#  new_artifact GET    /artifacts/new(.:format)      artifacts#new
-# edit_artifact GET    /artifacts/:id/edit(.:format) artifacts#edit
-#      artifact GET    /artifacts/:id(.:format)      artifacts#show
-#               PATCH  /artifacts/:id(.:format)      artifacts#update
-#               PUT    /artifacts/:id(.:format)      artifacts#update
-#               DELETE /artifacts/:id(.:format)      artifacts#destroy
-#        groups GET    /groups(.:format)             groups#index
-#               POST   /groups(.:format)             groups#create
-#     new_group GET    /groups/new(.:format)         groups#new
-#    edit_group GET    /groups/:id/edit(.:format)    groups#edit
-#         group GET    /groups/:id(.:format)         groups#show
-#               PATCH  /groups/:id(.:format)         groups#update
-#               PUT    /groups/:id(.:format)         groups#update
-#               DELETE /groups/:id(.:format)         groups#destroy
-#         users GET    /users(.:format)              users#index
-#               POST   /users(.:format)              users#create
-#      new_user GET    /users/new(.:format)          users#new
-#     edit_user GET    /users/:id/edit(.:format)     users#edit
-#          user GET    /users/:id(.:format)          users#show
-#               PATCH  /users/:id(.:format)          users#update
-#               PUT    /users/:id(.:format)          users#update
-#               DELETE /users/:id(.:format)          users#destroy
+#                   Prefix Verb   URI Pattern                              Controller#Action
+#                     root GET    /                                        artifacts#index
+# numberArtifacts_location GET    /locations/:id/numberArtifacts(.:format) locations#numberArtifacts
+#                          GET    /locations/sort/:field(.:format)         locations#sort
+#                locations GET    /locations(.:format)                     locations#index
+#                          POST   /locations(.:format)                     locations#create
+#             new_location GET    /locations/new(.:format)                 locations#new
+#            edit_location GET    /locations/:id/edit(.:format)            locations#edit
+#                 location GET    /locations/:id(.:format)                 locations#show
+#                          PATCH  /locations/:id(.:format)                 locations#update
+#                          PUT    /locations/:id(.:format)                 locations#update
+#                          DELETE /locations/:id(.:format)                 locations#destroy
+#                          GET    /artifacts/sort/:field(.:format)         artifacts#sort
+#                artifacts GET    /artifacts(.:format)                     artifacts#index
+#                          POST   /artifacts(.:format)                     artifacts#create
+#             new_artifact GET    /artifacts/new(.:format)                 artifacts#new
+#            edit_artifact GET    /artifacts/:id/edit(.:format)            artifacts#edit
+#                 artifact GET    /artifacts/:id(.:format)                 artifacts#show
+#                          PATCH  /artifacts/:id(.:format)                 artifacts#update
+#                          PUT    /artifacts/:id(.:format)                 artifacts#update
+#                          DELETE /artifacts/:id(.:format)                 artifacts#destroy
+#    numberArtifacts_group GET    /groups/:id/numberArtifacts(.:format)    groups#numberArtifacts
+#                          GET    /groups/sort/:field(.:format)            groups#sort
+#                   groups GET    /groups(.:format)                        groups#index
+#                          POST   /groups(.:format)                        groups#create
+#                new_group GET    /groups/new(.:format)                    groups#new
+#               edit_group GET    /groups/:id/edit(.:format)               groups#edit
+#                    group GET    /groups/:id(.:format)                    groups#show
+#                          PATCH  /groups/:id(.:format)                    groups#update
+#                          PUT    /groups/:id(.:format)                    groups#update
+#                          DELETE /groups/:id(.:format)                    groups#destroy
+#     numberArtifacts_user GET    /users/:id/numberArtifacts(.:format)     users#numberArtifacts
+#                          GET    /users/sort/:field(.:format)             users#sort
+#                    users GET    /users(.:format)                         users#index
+#                          POST   /users(.:format)                         users#create
+#                 new_user GET    /users/new(.:format)                     users#new
+#                edit_user GET    /users/:id/edit(.:format)                users#edit
+#                     user GET    /users/:id(.:format)                     users#show
+#                          PATCH  /users/:id(.:format)                     users#update
+#                          PUT    /users/:id(.:format)                     users#update
+#                          DELETE /users/:id(.:format)                     users#destroy
 #
 
 Rails.application.routes.draw do
