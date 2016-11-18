@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  firstname              :string
 #  lastname               :string
-#  username               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  email                  :string           default(""), not null
@@ -31,11 +30,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-	validates :firstname, presence: true
-	validates :lastname, presence: true
-	validates :username, presence: true
-	validates :username, uniqueness: true
+         :recoverable, :rememberable, :trackable, :validatable,
+         :confirmable, :lockable
 
 	has_and_belongs_to_many :groups
 	has_and_belongs_to_many :artifacts
