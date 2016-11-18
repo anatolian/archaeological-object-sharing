@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'annotate'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
+gem 'devise'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
