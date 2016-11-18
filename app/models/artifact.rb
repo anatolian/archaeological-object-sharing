@@ -15,5 +15,5 @@ class Artifact < ActiveRecord::Base
 	validates :name, uniqueness: true
 
 	has_and_belongs_to_many :users
-	belongs_to :location
+	has_and_belongs_to_many :location
 end
