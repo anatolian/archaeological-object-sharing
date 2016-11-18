@@ -8,8 +8,6 @@
   <dd><%= @user.firstname %></dd>
   <dt><strong><%= model_class.human_attribute_name(:lastname) %>:</strong></dt>
   <dd><%= @user.lastname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:username) %>:</strong></dt>
-  <dd><%= @user.username %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
