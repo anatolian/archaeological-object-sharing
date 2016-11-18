@@ -16,6 +16,12 @@
 #                          PATCH  /users(.:format)                         devise/registrations#update
 #                          PUT    /users(.:format)                         devise/registrations#update
 #                          DELETE /users(.:format)                         devise/registrations#destroy
+#        user_confirmation POST   /users/confirmation(.:format)            devise/confirmations#create
+#    new_user_confirmation GET    /users/confirmation/new(.:format)        devise/confirmations#new
+#                          GET    /users/confirmation(.:format)            devise/confirmations#show
+#              user_unlock POST   /users/unlock(.:format)                  devise/unlocks#create
+#          new_user_unlock GET    /users/unlock/new(.:format)              devise/unlocks#new
+#                          GET    /users/unlock(.:format)                  devise/unlocks#show
 #                     root GET    /                                        artifacts#index
 # numberArtifacts_location GET    /locations/:id/numberArtifacts(.:format) locations#numberArtifacts
 #                          GET    /locations/sort/:field(.:format)         locations#sort
