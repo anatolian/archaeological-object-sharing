@@ -71,7 +71,7 @@ Rails.application.routes.draw do
 
   resources :locations do
     member do
-      get 'numberArtifacts'
+      get 'artifacts'
     end
 
     collection do
@@ -87,7 +87,7 @@ Rails.application.routes.draw do
 
   resources :groups do
     member do
-      get 'numberArtifacts'
+      get 'artifacts'
     end
 
     collection do
@@ -97,7 +97,7 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get 'numberArtifacts'
+      get 'artifacts'
     end
 
     collection do

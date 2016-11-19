@@ -37,7 +37,7 @@ class ArtifactsController < ApplicationController
 
     respond_to do |format|
       if @artifact.save
-        current_user.artifact << @artifact
+        current_user.artifacts << @artifact
         format.html { redirect_to @artifact, notice: 'Artifact was successfully created.' }
         format.json { render :show, status: :created, location: @artifact }
       else
