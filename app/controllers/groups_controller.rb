@@ -12,8 +12,8 @@ class GroupsController < ApplicationController
   def show
   end
 
-  def numberArtifacts
-    @numberArtifacts = Group.find(params[:id]).artifacts.size
+  def artifacts
+    @artifacts = Group.find(params[:id]).artifacts
   end
 
   def sort

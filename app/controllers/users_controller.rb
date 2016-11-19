@@ -12,8 +12,8 @@ class UsersController < ApplicationController
   def show
   end
 
-  def numberArtifacts
-    @numberArtifacts = User.find(params[:id]).artifacts.size
+  def artifacts
+    @artifacts = User.find(params[:id]).artifacts
   end
 
   def sort

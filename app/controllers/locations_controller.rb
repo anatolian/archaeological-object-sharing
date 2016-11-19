@@ -12,8 +12,8 @@ class LocationsController < ApplicationController
   def show
   end
 
-  def numberArtifacts
-    @numberArtifacts = Location.find(params[:id]).artifacts.size
+  def artifacts
+    @artifacts = Location.find(params[:id]).artifacts
   end
 
   def sort
