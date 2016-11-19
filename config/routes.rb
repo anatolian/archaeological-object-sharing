@@ -67,7 +67,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root "artifacts#index"
+  root 'artifacts#index'
 
   resources :locations do
     member do
