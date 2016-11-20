@@ -1,0 +1,29 @@
+Already done did it...:
+
+- Figure out AWS S3 credentialling system and upload appropraite files, generate appropriate keys, etc.
+
+- Figure out how AWS S3 API works, and demonstrate some of the functionality so everyone else can see how it works too!
+
+- Figure out how to add file uploads to the front-end views
+
+- Figure out how to add file uploads to the backend controllers
+
+
+
+
+
+
+
+
+
+Still left TODO...:
+
+- Add a column to the artifact table representing the location of any file uploads
+
+- Add database method(s) to add the S3 upload location to the artifact table
+
+- Add database method(s) to upload the file to the AWS S3 bucket.
+
+- Add database method(s) to retrieve files from the S3 bucket.
+
+- Add 

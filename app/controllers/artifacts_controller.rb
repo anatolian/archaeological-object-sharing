@@ -33,6 +33,11 @@ class ArtifactsController < ApplicationController
   # POST /artifacts
   # POST /artifacts.json
   def create
+
+    # This contains the file upload
+    upload_io = params[:artifact][:upload]
+    # puts upload_io.read
+
     @artifact = Artifact.new(artifact_params)
 
     respond_to do |format|
