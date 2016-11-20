@@ -26,4 +26,8 @@ Still left TODO...:
 
 - Add database method(s) to retrieve files from the S3 bucket.
 
-- Add 
+- Add functionality in the view to accept multiple file uploads.
+
+- Add functionality in the controller to accept multiple file uploads
+
+- Add functionality to generate sharable+self-destructing links
