@@ -12,6 +12,14 @@ class ArtifactsController < ApplicationController
   def show
   end
 
+  def users
+    @users = Artifact.find(params[:id]).users
+  end
+
+  def locations
+    @locations = Artifact.find(params[:id]).locations
+  end
+
   def sort
     @artifacts = []
     if (Artifact.attribute_names.include? (params[:field])) then

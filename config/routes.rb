@@ -33,6 +33,8 @@
 #                          PATCH  /locations/:id(.:format)           locations#update
 #                          PUT    /locations/:id(.:format)           locations#update
 #                          DELETE /locations/:id(.:format)           locations#destroy
+#           users_artifact GET    /artifacts/:id/users(.:format)     artifacts#users
+#       locations_artifact GET    /artifacts/:id/locations(.:format) artifacts#locations
 #                          GET    /artifacts/sort/:field(.:format)   artifacts#sort
 #                artifacts GET    /artifacts(.:format)               artifacts#index
 #                          POST   /artifacts(.:format)               artifacts#create
@@ -43,6 +45,7 @@
 #                          PUT    /artifacts/:id(.:format)           artifacts#update
 #                          DELETE /artifacts/:id(.:format)           artifacts#destroy
 #          artifacts_group GET    /groups/:id/artifacts(.:format)    groups#artifacts
+#              users_group GET    /groups/:id/users(.:format)        groups#users
 #                          GET    /groups/sort/:field(.:format)      groups#sort
 #                   groups GET    /groups(.:format)                  groups#index
 #                          POST   /groups(.:format)                  groups#create
@@ -53,6 +56,7 @@
 #                          PUT    /groups/:id(.:format)              groups#update
 #                          DELETE /groups/:id(.:format)              groups#destroy
 #           artifacts_user GET    /users/:id/artifacts(.:format)     users#artifacts
+#              groups_user GET    /users/:id/groups(.:format)        users#groups
 #                          GET    /users/sort/:field(.:format)       users#sort
 #                    users GET    /users(.:format)                   users#index
 #                     user GET    /users/:id(.:format)               users#show
@@ -74,6 +78,14 @@ Rails.application.routes.draw do
   end
 
   resources :artifacts do
+    member do
+      get 'users'
+    end
+
+    member do
+      get 'locations'
+    end
+
     collection do
       get 'sort/:field' => 'artifacts#sort'
     end
@@ -84,6 +96,10 @@ Rails.application.routes.draw do
       get 'artifacts'
     end
 
+    member do
+      get 'users'
+    end
+
     collection do
       get 'sort/:field' => 'groups#sort'
     end
@@ -92,6 +108,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     member do
       get 'artifacts'
+    end
+
+    member do
+      get 'groups'
     end
 
     collection do
