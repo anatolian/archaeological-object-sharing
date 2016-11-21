@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require three
+//= require simple3d
 //= require_tree .

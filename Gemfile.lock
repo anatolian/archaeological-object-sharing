@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/marvindanig/threejs-rails.git
+  revision: 1b495c8d11fecadc0b786b550591730546518bd4
+  specs:
+    threejs-rails (0.0.3)
+      railties (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +249,7 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer
+  threejs-rails!
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
