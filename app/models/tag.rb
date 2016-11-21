@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: Tags
+# Table name: tags
 #
 #  id          :integer          not null, primary key
 #  name        :string

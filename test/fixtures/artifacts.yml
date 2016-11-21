@@ -5,9 +5,11 @@
 #  id          :integer          not null, primary key
 #  name        :string
 #  description :text
-#  coordinate  :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  longitude   :float
+#  latitude    :float
+#  filepath    :text
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
