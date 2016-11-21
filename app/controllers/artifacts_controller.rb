@@ -25,7 +25,7 @@ class ArtifactsController < ApplicationController
     if (Artifact.attribute_names.include? (params[:field])) then
       @artifacts = Artifact.order(params[:field])
     end
-    
+
     render :index
   end
 
@@ -92,6 +92,6 @@ class ArtifactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artifact_params
-      params.require(:artifact).permit(:name, :description, :coordinate)
+      params.require(:artifact).permit(:name, :description, :longitude, :latitude, :filepath)
     end
 end

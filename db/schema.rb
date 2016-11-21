@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121004622) do
+ActiveRecord::Schema.define(version: 20161121011151) do
 
   create_table "artifacts", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "coordinate"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "filepath"
   end
 
   create_table "artifacts_users", id: false, force: :cascade do |t|
