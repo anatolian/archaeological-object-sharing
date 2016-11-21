@@ -1,0 +1,6 @@
+AWSAccessKeyId=AKIAISGTF2B5MAWAFQTQ
+AWSSecretKey=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
+
+Before this will work, you must enter these two commands into the active terminal window that you are using:
+export AWS_ACCESS_KEY_ID=AKIAISGTF2B5MAWAFQTQ
+export AWS_SECRET_ACCESS_KEY=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

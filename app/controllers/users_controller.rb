@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     @artifacts = User.find(params[:id]).artifacts
   end
 
+  def groups
+    @groups = User.find(params[:id]).groups
+  end
+
   def sort
     @users = []
     if (User.attribute_names.include? (params[:field])) then

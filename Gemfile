@@ -10,6 +10,7 @@ gem 'annotate'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'devise'
+gem 'aws-sdk', '~> 2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

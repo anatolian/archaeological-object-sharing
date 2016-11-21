@@ -12,6 +12,14 @@ class ArtifactsController < ApplicationController
   def show
   end
 
+  def users
+    @users = Artifact.find(params[:id]).users
+  end
+
+  def locations
+    @locations = Artifact.find(params[:id]).locations
+  end
+
   def sort
     @artifacts = []
     if (Artifact.attribute_names.include? (params[:field])) then
@@ -33,6 +41,11 @@ class ArtifactsController < ApplicationController
   # POST /artifacts
   # POST /artifacts.json
   def create
+
+    # This contains the file upload
+    upload_io = params[:artifact][:upload]
+    # puts upload_io.read
+
     @artifact = Artifact.new(artifact_params)
 
     respond_to do |format|
