@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: locations
+# Table name: Tags
 #
 #  id          :integer          not null, primary key
 #  name        :string
@@ -10,7 +10,7 @@
 #  updated_at  :datetime         not null
 #
 
-class Location < ActiveRecord::Base
+class Tag < ActiveRecord::Base
 	validates :name, presence: true
 	validates :name, uniqueness: true
 

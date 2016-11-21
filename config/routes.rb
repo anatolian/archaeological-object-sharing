@@ -23,16 +23,16 @@
 #          new_user_unlock GET    /users/unlock/new(.:format)        devise/unlocks#new
 #                          GET    /users/unlock(.:format)            devise/unlocks#show
 #                     root GET    /                                  artifacts#index
-#       artifacts_location GET    /locations/:id/artifacts(.:format) locations#artifacts
-#                          GET    /locations/sort/:field(.:format)   locations#sort
-#                locations GET    /locations(.:format)               locations#index
-#                          POST   /locations(.:format)               locations#create
-#             new_location GET    /locations/new(.:format)           locations#new
-#            edit_location GET    /locations/:id/edit(.:format)      locations#edit
-#                 location GET    /locations/:id(.:format)           locations#show
-#                          PATCH  /locations/:id(.:format)           locations#update
-#                          PUT    /locations/:id(.:format)           locations#update
-#                          DELETE /locations/:id(.:format)           locations#destroy
+#       artifacts_tag GET    /tags/:id/artifacts(.:format) tags#artifacts
+#                          GET    /tags/sort/:field(.:format)   tags#sort
+#                tags GET    /tags(.:format)               tags#index
+#                          POST   /tags(.:format)               tags#create
+#             new_tag GET    /tags/new(.:format)           tags#new
+#            edit_tag GET    /tags/:id/edit(.:format)      tags#edit
+#                 tag GET    /tags/:id(.:format)           tags#show
+#                          PATCH  /tags/:id(.:format)           tags#update
+#                          PUT    /tags/:id(.:format)           tags#update
+#                          DELETE /tags/:id(.:format)           tags#destroy
 #                          GET    /artifacts/sort/:field(.:format)   artifacts#sort
 #                artifacts GET    /artifacts(.:format)               artifacts#index
 #                          POST   /artifacts(.:format)               artifacts#create
@@ -63,13 +63,13 @@ Rails.application.routes.draw do
   devise_for :users
   root 'artifacts#index'
 
-  resources :locations do
+  resources :tags do
     member do
       get 'artifacts'
     end
 
     collection do
-      get 'sort/:field' => 'locations#sort'
+      get 'sort/:field' => 'tags#sort'
     end
   end
 
