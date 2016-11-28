@@ -1,27 +1,35 @@
-Given (/I am on the user page/) do 
-	visit users_path
-	click_link 'New User'
+Given (/^I am in the my own user page$/) do
+	user = User.new(
+		:firstname => "f",
+		:lastname => "l",
+		:email => "example@example.com",
+		:password => "123465",
+		:password_confirmation => "123465")
+	user.skip_confirmation!
+	user.save
+	visit(user_session_path)
+	fill_in 'Email', :with => "example@example.com"
+	fill_in 'Password', :with => "123465"
+	click_button "Log in"
 end
 
-When (/I want to create a user/) do
-	fill_in 'Firstname', :with => "Donald"
-	fill_in 'Lastname', :with => "Trump"
-	fill_in 'Username', :with => "example@upenn.com"
-	click_button "Create User"
+Given (/I am on the user page/) do
+	click_link "Users"  
+end
+
+When (/I want to see the created user/) do
+	click_link "f l"
 end
 
 Then (/^I should be able to see the user information$/) do
-	assert page.has_content?("User was successfully created")
+	assert page.has_content?("Created At")
 end
 
-When (/I want to edit the created user/) do
-	fill_in 'Firstname', :with => "Donald"
-	fill_in 'Lastname', :with => "Trump"
-	fill_in 'Username', :with => "example@upenn.com"
-	click_button "Create User"
-	click_link 'Edit'
+When (/I leave from my profile page/) do
+	click_link "f l"
+	click_link 'Back'
 end
 
-Then (/^I should be able to see the editing page$/) do
-	assert page.has_content?("Editing User")
+Then (/^I should be able to see the users listing page$/) do
+	assert page.has_content?("Users")
 end
