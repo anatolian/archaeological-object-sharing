@@ -59,11 +59,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-lg-3">
+        <div class="col-lg-2">
           <% if user_signed_in? %>
           <div class="well sidebar-nav">
             <h3>Welcome!</h3>
@@ -78,6 +74,11 @@
           </div><!--/.well -->
           <% end %>
         </div><!--/span-->
+        <div class="col-lg-10">
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+
       </div><!--/row-->
 
       <footer>
