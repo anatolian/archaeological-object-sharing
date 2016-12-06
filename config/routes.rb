@@ -90,6 +90,10 @@ Rails.application.routes.draw do
       get 'tags'
     end
 
+    member do
+      get 'add'
+    end
+
     collection do
       get 'sort/:field' => 'artifacts#sort'
     end

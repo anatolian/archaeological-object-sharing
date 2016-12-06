@@ -1,5 +1,8 @@
 class ArtifactsController < ApplicationController
   before_action :set_artifact, only: [:show, :edit, :update, :destroy]
+  
+  #???
+  before_filter :set_var
 
   # GET /artifacts
   # GET /artifacts.json
@@ -10,6 +13,12 @@ class ArtifactsController < ApplicationController
   # GET /artifacts/1
   # GET /artifacts/1.json
   def show
+    #???
+    @my_var
+  end
+
+  def add
+    Artifact.find(params[:id]).tags << Tag.find(@my_var)
   end
 
   def groups
@@ -18,6 +27,10 @@ class ArtifactsController < ApplicationController
 
   def users
     @users = Artifact.find(params[:id]).users
+  end
+
+  def tags
+    @tags = Artifact.find(params[:id]).tags
   end
 
   def locations
@@ -97,5 +110,10 @@ class ArtifactsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def artifact_params
       params.require(:artifact).permit(:name, :description, :longitude, :latitude, :filepath)
+    end
+
+    #???
+    def set_var
+      @my_var = 1
     end
 end

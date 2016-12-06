@@ -25,9 +25,42 @@
   <%= @artifact.filepath %>
 </p>
 
-<button type="button" class="btn btn-primary"><%= link_to "Artifact's Tags", "/artifacts/#{@artifact.id}/tags"  %></button>
+<div class="row small-buffer"></div>
+
+<p>
+  <strong>Artifact's Tags:</strong>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to "Name", "/tags/sort/name" %></th>
+      <th><%= link_to "Description", "/tags/sort/description" %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tags = Artifact.find(params[:id]).tags %>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= tag.name %></td>
+        <td><%= tag.description %></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to "Remove Tag", "/artifacts/#{@artifact.id}/remove", data: { confirm: 'Are you sure?' } %></button></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= collection_select(@my_var, :tag_id, Tag.all, :id, :name) %>
+
+<button type="button" class="btn btn-default"><%= link_to "Add Tag", "/artifacts/#{@artifact.id}/add" %></button>
+
+<div class="row buffer"></div>
 
 <button type="button" class="btn btn-primary"><%= link_to "Artifact's Users", "/artifacts/#{@artifact.id}/users"  %></button>
+
+<button type="button" class="btn btn-primary"><%= link_to "Artifact's Groups", "/artifacts/#{@artifact.id}/groups"  %></button>
 
 <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_artifact_path(@artifact) %></button>
