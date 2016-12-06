@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><%= link_to 'Show', @user %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Back', :back %></button>
+</div>

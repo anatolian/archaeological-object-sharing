@@ -2,7 +2,7 @@
 
 <h1>Artifact's Users</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th><%= link_to "Name", "/users/sort/lastname" %></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
+        <td><button type="button" class="btn btn-default"><%= link_to "#{user.firstname} #{user.lastname}", user %></button></td>
         <td><%= user.id%></td>
         <td><%= user.last_sign_in_at%></td>
       </tr>

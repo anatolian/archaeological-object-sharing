@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121011151) do
+ActiveRecord::Schema.define(version: 20161206004012) do
 
   create_table "artifacts", force: :cascade do |t|
     t.string   "name"
@@ -23,13 +23,23 @@ ActiveRecord::Schema.define(version: 20161121011151) do
     t.text     "filepath"
   end
 
+  create_table "artifacts_locations", id: false, force: :cascade do |t|
+    t.integer "artifact_id", null: false
+    t.integer "location_id", null: false
+  end
+
+  create_table "artifacts_tags", id: false, force: :cascade do |t|
+    t.integer "artifact_id", null: false
+    t.integer "tag_id",      null: false
+  end
+
+  add_index "artifacts_tags", ["artifact_id", "tag_id"], name: "index_artifacts_tags_on_artifact_id_and_tag_id"
+  add_index "artifacts_tags", ["tag_id", "artifact_id"], name: "index_artifacts_tags_on_tag_id_and_artifact_id"
+
   create_table "artifacts_users", id: false, force: :cascade do |t|
     t.integer "user_id",     null: false
     t.integer "artifact_id", null: false
   end
-
-  add_index "artifacts_users", ["artifact_id"], name: "index_artifacts_users_on_artifact_id"
-  add_index "artifacts_users", ["user_id"], name: "index_artifacts_users_on_user_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -41,9 +51,6 @@ ActiveRecord::Schema.define(version: 20161121011151) do
     t.integer "user_id",  null: false
     t.integer "group_id", null: false
   end
-
-  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id"
-  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"

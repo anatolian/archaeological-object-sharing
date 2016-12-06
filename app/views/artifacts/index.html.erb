@@ -12,26 +12,25 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Longitude</th>
-      <th>Latitude</th>
-      <th>Filepath</th>
-      <th colspan="3"></th>
+      <th><%= link_to "Name", "/artifacts/sort/name" %></th>
+      <th><%= link_to "Description", "/artifacts/sort/description" %></th>
+      <th><%= link_to "Longitude", "/artifacts/sort/longitude" %></th>
+      <th><%= link_to "Latitude", "/artifacts/sort/latitude" %></th>
+      <th><%= link_to "Filepath", "/artifacts/sort/filepath" %></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @artifacts.each do |artifact| %>
       <tr>
-        <td><%= artifact.name %></td>
+        <td><button type="button" class="btn btn-default"><%= link_to "#{artifact.name}", artifact %></button></td>
         <td><%= artifact.description %></td>
         <td><%= artifact.longitude %></td>
         <td><%= artifact.latitude %></td>
         <td><%= artifact.filepath %></td>
-        <td><button type="button" class="btn btn-default"><%= link_to 'Show', artifact %></button></td>
-        <td><button type="button" class="btn btn-success"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
-        <td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', artifact, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to 'Destroy', artifact, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

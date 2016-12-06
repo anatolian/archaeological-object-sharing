@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @tag %> |
-<%= link_to 'Back', tags_path %>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-info"><%= link_to 'Show', @tag %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Back', :back %></button>
+</div>
