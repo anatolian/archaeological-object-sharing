@@ -5,9 +5,37 @@
   <%= @group.name %>
 </p>
 
-<button type="button" class="btn btn-primary"><%= link_to "Group's Artifacts", "/groups/#{@group.id}/artifacts"  %></button>
+<div class="row small-buffer"></div>
 
-<button type="button" class="btn btn-primary"><%= link_to "Group's Users", "/groups/#{@group.id}/users"  %></button>
+<p>
+  <strong>Group's Users:</strong>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= link_to "Name", "/users/sort/lastname" %></th>
+      <th><%= link_to "ID", "/users/sort/id" %></th>
+      <th><%= link_to "Last Sign In", "/users/sort/last_sign_in_at" %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	<% @users = Group.find(params[:id]).users %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= "#{user.firstname} #{user.lastname}" %></td>
+        <td><%= user.id %></td>
+        <td><%= user.last_sign_in_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="row buffer"></div>
+
+<button type="button" class="btn btn-primary"><%= link_to "Group's Artifacts", "/groups/#{@group.id}/artifacts"  %></button>
 
 <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_group_path(@group) %></button>

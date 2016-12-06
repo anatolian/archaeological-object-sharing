@@ -36,7 +36,6 @@
 #          groups_artifact GET    /artifacts/:id/groups(.:format)   artifacts#groups
 #           users_artifact GET    /artifacts/:id/users(.:format)    artifacts#users
 #            tags_artifact GET    /artifacts/:id/tags(.:format)     artifacts#tags
-#             add_artifact GET    /artifacts/:id/add(.:format)      artifacts#add
 #                          GET    /artifacts/sort/:field(.:format)  artifacts#sort
 #                artifacts GET    /artifacts(.:format)              artifacts#index
 #                          POST   /artifacts(.:format)              artifacts#create
@@ -90,10 +89,6 @@ Rails.application.routes.draw do
 
     member do
       get 'tags'
-    end
-
-    member do
-      get 'add'
     end
 
     collection do
