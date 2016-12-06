@@ -12,6 +12,10 @@ class ArtifactsController < ApplicationController
   def show
   end
 
+  def groups
+    @groups = Artifact.find(params[:id]).groups
+  end
+
   def users
     @users = Artifact.find(params[:id]).users
   end

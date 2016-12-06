@@ -16,7 +16,7 @@
       <tr>
         <td><button type="button" class="btn btn-default"><%= link_to "#{tag.name}", tag %></button></td>
         <td><%= tag.description %></td>
-        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_tag_path(tag) %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_tag_path(tag) %></button></td>
         <td><button type="button" class="btn btn-warning"><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>

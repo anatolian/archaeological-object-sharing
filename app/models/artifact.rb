@@ -17,5 +17,6 @@ class Artifact < ActiveRecord::Base
 	validates :name, uniqueness: true
 
 	has_and_belongs_to_many :users
-	has_and_belongs_to_many :tag
+	has_and_belongs_to_many :tags
+	has_many :groups, through: :users
 end

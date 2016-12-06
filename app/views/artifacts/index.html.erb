@@ -29,7 +29,7 @@
         <td><%= artifact.longitude %></td>
         <td><%= artifact.latitude %></td>
         <td><%= artifact.filepath %></td>
-        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
         <td><button type="button" class="btn btn-warning"><%= link_to 'Destroy', artifact, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>

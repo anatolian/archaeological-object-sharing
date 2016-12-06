@@ -14,7 +14,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><button type="button" class="btn btn-default"><%= link_to "#{group.name}", group %></button></td>
-        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_group_path(group) %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_group_path(group) %></button></td>
         <td><button type="button" class="btn btn-warning"><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>

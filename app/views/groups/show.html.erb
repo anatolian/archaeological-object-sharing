@@ -5,7 +5,11 @@
   <%= @group.name %>
 </p>
 
+<button type="button" class="btn btn-primary"><%= link_to "Group's Artifacts", "/groups/#{@group.id}/artifacts"  %></button>
+
+<button type="button" class="btn btn-primary"><%= link_to "Group's Users", "/groups/#{@group.id}/users"  %></button>
+
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-info"><%= link_to 'Edit', edit_group_path(@group) %></button>
-  <button type="button" class="btn btn-default"><%= link_to 'Back', :back %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_group_path(@group) %></button>
+  <button type="button" class="btn btn-default"><%= link_to 'Back', groups_path %></button>
 </div>

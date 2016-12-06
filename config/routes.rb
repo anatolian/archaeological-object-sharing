@@ -79,6 +79,10 @@ Rails.application.routes.draw do
 
   resources :artifacts do
     member do
+      get 'groups'
+    end
+
+    member do
       get 'users'
     end
 

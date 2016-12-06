@@ -22,7 +22,7 @@
         <td><%= artifact.longitude %></td>
         <td><%= artifact.latitude %></td>
         <td><%= artifact.filepath %></td>
-        <td><button type="button" class="btn btn-info"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
+        <td><button type="button" class="btn btn-default"><%= link_to 'Edit', edit_artifact_path(artifact) %></button></td>
         <td><button type="button" class="btn btn-warning"><%= link_to 'Destroy', artifact, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
@@ -30,5 +30,3 @@
 </table>
 
 <br>
-
-<button type="button" class="btn btn-lg btn-primary"><%= link_to 'New Artifact', new_artifact_path %></button>
