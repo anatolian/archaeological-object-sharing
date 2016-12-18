@@ -146,6 +146,7 @@ GEM
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    pg (0.19.0)
     public_suffix (2.0.4)
     rack (1.6.5)
     rack-test (0.6.3)
@@ -266,6 +267,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails
+  pg
   rails (= 4.2.7.1)
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
