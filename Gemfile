@@ -9,6 +9,7 @@ gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'devise'
 gem 'aws-sdk', '~> 2'
+gem 'newrelic_rpm'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -64,7 +65,6 @@ group :development do
 end
 
 group :production do
-  gem 'newrelic_rpm'
   gem 'pg'
   gem 'rails_12factor'
 end
