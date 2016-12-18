@@ -1,6 +1,5 @@
 class ArtifactsController < ApplicationController
   before_action :set_artifact, only: [:show, :edit, :update, :destroy]
-  
 
   # GET /artifacts
   # GET /artifacts.json
@@ -68,7 +67,7 @@ class ArtifactsController < ApplicationController
         format.json { render json: @artifact.errors, status: :unprocessable_entity }
       end
     end
-    
+
   end
 
   # PATCH/PUT /artifacts/1

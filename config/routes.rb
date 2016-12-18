@@ -68,6 +68,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'artifacts#index'
 
+
   resources :tags do
     member do
       get 'artifacts'

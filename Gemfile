@@ -11,6 +11,7 @@ gem 'devise'
 gem 'aws-sdk', '< 2.0'
 gem 'newrelic_rpm'
 gem 'paperclip', '~> 4.2'
+gem 'rack-cors'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -70,4 +71,3 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-

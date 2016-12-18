@@ -64,4 +64,9 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION')
     },
   }
+
+  config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Request-Method' => '*'
+  }
 end
