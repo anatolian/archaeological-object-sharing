@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 
+gem 'sprockets', '3.6.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -42,6 +43,8 @@ gem 'threejs-rails', git: 'git://github.com/marvindanig/threejs-rails.git'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'simplecov', :require => false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
