@@ -23,11 +23,6 @@ ActiveRecord::Schema.define(version: 20161206004012) do
     t.text     "filepath"
   end
 
-  create_table "artifacts_locations", id: false, force: :cascade do |t|
-    t.integer "artifact_id", null: false
-    t.integer "location_id", null: false
-  end
-
   create_table "artifacts_tags", id: false, force: :cascade do |t|
     t.integer "artifact_id", null: false
     t.integer "tag_id",      null: false
@@ -41,6 +36,9 @@ ActiveRecord::Schema.define(version: 20161206004012) do
     t.integer "artifact_id", null: false
   end
 
+  add_index "artifacts_users", ["artifact_id"], name: "index_artifacts_users_on_artifact_id"
+  add_index "artifacts_users", ["user_id"], name: "index_artifacts_users_on_user_id"
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -51,6 +49,9 @@ ActiveRecord::Schema.define(version: 20161206004012) do
     t.integer "user_id",  null: false
     t.integer "group_id", null: false
   end
+
+  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id"
+  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
