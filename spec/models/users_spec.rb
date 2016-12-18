@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, :type => :model do
-  it "orders by last name" do
+  it "can crate user with username and password" do
 
     lindeman = User.new(firstname: "Andy", lastname: "Lindeman", email: "al@gmail.com", password: "al123465")
     lindeman.skip_confirmation!
@@ -11,6 +11,6 @@ RSpec.describe User, :type => :model do
     chelimsky.save!
 
     expect(User.all.size).to eq(2)
-    
+
   end
 end

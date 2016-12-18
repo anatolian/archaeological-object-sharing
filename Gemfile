@@ -43,6 +43,7 @@ gem 'sprockets', '3.6.3'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'simplecov', :require => false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
