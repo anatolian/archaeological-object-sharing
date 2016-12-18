@@ -24,9 +24,9 @@ class ArtifactsController < ApplicationController
     @tags = Artifact.find(params[:id]).tags
   end
 
-  def locations
-    @locations = Artifact.find(params[:id]).locations
-  end
+  # def locations
+  #   @locations = Artifact.find(params[:id]).locations
+  # end
 
   def sort
     @artifacts = []
