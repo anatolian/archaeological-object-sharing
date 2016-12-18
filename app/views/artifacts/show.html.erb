@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+</br>
 <p>
   <strong>Name:</strong>
   <%= @artifact.name %>
@@ -53,6 +54,17 @@
 
 <div class="row buffer"></div>
 
+<p>
+  <strong>Media:</strong>
+</p>
+</br>
+<div><%= image_tag @artifact.file.url %></div>
+</br>
+<script type="text/javascript">
+    var path = '<%=escape_javascript @artifact.filepath %>'
+    vtkRender(path);
+</script>
+
 <button type="button" class="btn btn-primary"><%= link_to "Artifact's Users", "/artifacts/#{@artifact.id}/users"  %></button>
 
 <button type="button" class="btn btn-primary"><%= link_to "Artifact's Groups", "/artifacts/#{@artifact.id}/groups"  %></button>
@@ -61,8 +73,3 @@
   <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_artifact_path(@artifact) %></button>
   <button type="button" class="btn btn-default"><%= link_to 'Back', artifacts_path %></button>
 </div>
-
-<script type="text/javascript">
-    // simpleRender();
-    loadedRender();
-</script>

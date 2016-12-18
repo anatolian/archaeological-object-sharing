@@ -1,4 +1,4 @@
-<%= form_for(@artifact) do |f| %>
+<%= form_for @artifact, html: { multipart: true } do |f| %>
   <% if @artifact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@artifact.errors.count, "error") %> prohibited this artifact from being saved:</h2>
@@ -36,8 +36,8 @@
     <%= f.text_field :filepath %>
   </div>
   <div class="field">
-    <%= f.label :upload %><br>
-    <%= f.file_field :upload %>
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
   </div>
   <div class="actions">
     <%= f.submit %>

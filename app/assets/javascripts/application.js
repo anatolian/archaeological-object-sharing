@@ -15,9 +15,12 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require three
+//= require Stats
 //= require Detector
 //= require MTLLoader
 //= require OBJLoader
+//= require BabylonLoader
+//= require VTKLoader
 //= require OrbitControls
 //= require simple3d
 //= require_tree .
