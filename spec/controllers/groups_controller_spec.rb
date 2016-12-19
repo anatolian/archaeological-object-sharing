@@ -18,6 +18,28 @@ RSpec.describe UsersController, :type => :controller do
 		click_button "Log in"
 	end
 
+	# The following two tests are added in this iteration to test new functionalities for normal credit.
+	it "can shows all users that the group has" do
+		click_link "Groups"
+		click_link "New Group"
+		fill_in 'Name', :with => "some group"
+		click_button "Create Group"
+		visit "1/users"
+		assert page.has_content?("Group's Users")
+	end
+
+  	it "can sort the all groups by their names" do
+		click_link "Groups"
+		click_link "New Group"
+		fill_in 'Name', :with => "some group"
+		click_button "Create Group"
+		visit "/groups/sort/name"
+		assert page.has_content?("Groups")		
+ 	end
+
+
+ 	# following are tests that have been implemented bofre using cucumber
+ 	# and added in here to achieve code coverage for extra credit
 	it "can show all groups" do
 		click_link "Groups"
 		assert page.has_content?("Groups")
@@ -84,14 +106,7 @@ RSpec.describe UsersController, :type => :controller do
 		assert page.has_content?("Group's Artifacts")
 	end
 
-	it "can shows all users that the group has" do
-		click_link "Groups"
-		click_link "New Group"
-		fill_in 'Name', :with => "some group"
-		click_button "Create Group"
-		visit "1/users"
-		assert page.has_content?("Group's Users")
-	end
+
 
 	it "can delete a group" do
 		click_link "Groups"
@@ -102,15 +117,5 @@ RSpec.describe UsersController, :type => :controller do
 		click_link "Destroy"
 		assert page.has_content?("Group was successfully destroyed")
 	end
-
-  	it "can sort the all groups by their names" do
-		click_link "Groups"
-		click_link "New Group"
-		fill_in 'Name', :with => "some group"
-		click_button "Create Group"
-
-		visit "/groups/sort/name"
-		assert page.has_content?("Groups")		
- 	end
 
 end

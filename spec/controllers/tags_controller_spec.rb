@@ -18,6 +18,35 @@ RSpec.describe UsersController, :type => :controller do
 		click_button "Log in"
 	end
 
+	# The following two tests are for normal credit.
+	# They tested some functionalities we missed in previous iterations.
+	it "can delete a tag" do
+		click_link "Tags"
+		click_link "New Tag"
+		fill_in 'Name', :with => "some tag"
+		click_button "Create Tag"
+		visit(tags_path)
+		click_link "Destroy"
+		assert page.has_content?("Tag was successfully destroyed")
+	end
+
+  	it "can sort the tags by name for a specific artifact" do
+ 	 	click_link "New Artifact"
+		fill_in 'Name', :with => "ancient artifact"
+		fill_in 'Description', :with => "Is this really an artifact?"
+		fill_in 'Longitude', :with => "11.11"
+		fill_in 'Latitude', :with => "22.22"
+		fill_in 'Filepath', :with => "folder/file"
+		click_button "Create Artifact"
+		visit(artifacts_path)
+		click_link "ancient artifact"
+		click_link "Name"
+		assert page.has_content?("Tags")		
+ 	end
+
+
+ 	# following are tests that have been implemented bofre using cucumber
+ 	# and added in here to achieve code coverage for extra credit
 	it "can show all tags" do
 		click_link "Tags"
 		assert page.has_content?("Tags")
@@ -83,29 +112,5 @@ RSpec.describe UsersController, :type => :controller do
 		click_link "Tag's Artifacts"
 		assert page.has_content?("Tag's Artifacts")
 	end
-
-	it "can delete a tag" do
-		click_link "Tags"
-		click_link "New Tag"
-		fill_in 'Name', :with => "some tag"
-		click_button "Create Tag"
-		visit(tags_path)
-		click_link "Destroy"
-		assert page.has_content?("Tag was successfully destroyed")
-	end
-
-  	it "can sort the tags by name for a specific artifact" do
- 	 	click_link "New Artifact"
-		fill_in 'Name', :with => "ancient artifact"
-		fill_in 'Description', :with => "Is this really an artifact?"
-		fill_in 'Longitude', :with => "11.11"
-		fill_in 'Latitude', :with => "22.22"
-		fill_in 'Filepath', :with => "folder/file"
-		click_button "Create Artifact"
-		visit(artifacts_path)
-		click_link "ancient artifact"
-		click_link "Name"
-		assert page.has_content?("Tags")		
- 	end
 
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Tag, :type => :model do
+RSpec.describe Group, :type => :model do
   it "orders by last name" do
 
     bestgroup = Group.new(name: "best group")

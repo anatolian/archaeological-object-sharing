@@ -9,7 +9,7 @@
 
 require "rails_helper"
 
-RSpec.describe Tag, :type => :model do
+RSpec.describe Artifact, :type => :model do
   it "orders by last name" do
 
     ancientArtifact = Artifact.new(name: "shining stone", description: "this is a golden stone", longitude: 102.1, latitude: 35.7)
