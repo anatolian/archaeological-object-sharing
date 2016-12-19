@@ -23,8 +23,10 @@ class Artifact < ActiveRecord::Base
 	has_attached_file :file #img
 	has_attached_file :model #3d model
 
-
-	do_not_validate_attachment_file_type :file, :model
+	# validates_attachment_content_type :file, :content_type => [/\Aimage\/.*\Z/, /\Avideo\/.*\Z/]
+	# validates_attachment_content_type :model, :content_type => [/\Aapplication\/.*\Z/, /\Atext\/.*\Z/]
+	do_not_validate_attachment_file_type :file
+	do_not_validate_attachment_file_type :model
 
 
 end
