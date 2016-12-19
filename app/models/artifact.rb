@@ -20,12 +20,11 @@ class Artifact < ActiveRecord::Base
 	has_and_belongs_to_many :tags
 	has_many :groups, through: :users
 
-	has_attached_file :file,
-		url: "/system/:hash.:extension",
-		hash_secret: "abc123"
-		
+	has_attached_file :file #img
+	has_attached_file :model #3d model
 
-	do_not_validate_attachment_file_type :file
 
-	
+	do_not_validate_attachment_file_type :file, :model
+
+
 end

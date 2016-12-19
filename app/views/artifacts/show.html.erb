@@ -54,16 +54,21 @@
 
 <div class="row buffer"></div>
 
-<p>
-  <strong>Media:</strong>
-</p>
-</br>
-<div><%= image_tag @artifact.file.url %></div>
-</br>
-<script type="text/javascript">
-    var path = '<%=escape_javascript @artifact.filepath %>'
-    vtkRender(path);
-</script>
+<% if @artifact.file?%>
+  <p>
+    <strong>Media:</strong>
+  </p>
+  </br>
+  <div><%= image_tag @artifact.file.url %></div>
+  </br>
+<% end %>
+
+<% if @artifact.model?%>
+  <script type="text/javascript">
+      var path = '<%=escape_javascript @artifact.model.url %>'
+      vtkRender(path);
+  </script>
+<% end %>
 
 <button type="button" class="btn btn-primary"><%= link_to "Artifact's Users", "/artifacts/#{@artifact.id}/users"  %></button>
 

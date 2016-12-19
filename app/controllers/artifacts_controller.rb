@@ -50,12 +50,7 @@ class ArtifactsController < ApplicationController
   # POST /artifacts.json
   def create
 
-    # This contains the file upload
-    # upload_io = params[:artifact][:file]
-    # puts upload_io.read
-
     @artifact = Artifact.new(artifact_params)
-    puts "AHHHHHHHHHHHHH" + @artifact.file.url
 
     respond_to do |format|
       if @artifact.save
@@ -102,7 +97,7 @@ class ArtifactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artifact_params
-      params.require(:artifact).permit(:name, :description, :longitude, :latitude, :filepath, :file, :tag_ids => [])
+      params.require(:artifact).permit(:name, :description, :longitude, :latitude, :filepath, :file, :model, :tag_ids => [])
     end
 
 end
